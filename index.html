@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Learn PWA</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1>Learn PWA</h1><header>
+    <hr><br><br>
+    <div id="app">
+        <h3>List Car Data</h3>
+        <select id="car-category" @change="updateCarInfo" v-model="currentColor">
+            <option value="all" selected>Show All</option>
+            <option v-for="color in colors" :value="color">{{color}}</option>
+        </select>
+        <div class="car-data" v-for="product in products">
+            <div class="test" v-for="car in product">
+                {{car.carName}} - {{car.carColor}}
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
